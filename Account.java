@@ -29,7 +29,6 @@ class BankAccount {
         }
     }
 }
-
 class ATM {
     private BankAccount userAccount;
 
