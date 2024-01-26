@@ -10,29 +10,23 @@ public class CurrencyConvertor {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Step 1: Currency Selection
+        
         System.out.println("Currency Converter");
         System.out.print("Enter the base currency code (e.g., USD): ");
         String baseCurrency = scanner.nextLine().toUpperCase();
         System.out.print("Enter the target currency code (e.g., EUR): ");
         String targetCurrency = scanner.nextLine().toUpperCase();
-
-        // Step 2: Fetch real-time exchange rates
         double exchangeRate = getExchangeRate(baseCurrency, targetCurrency);
         if (exchangeRate == -1) {
             System.out.println("Failed to fetch exchange rates. Exiting...");
             System.exit(1);
         }
 
-        // Step 3: Amount Input
+   
         System.out.print("Enter the amount to convert: ");
         double amountToConvert = scanner.nextDouble();
-
-        // Step 4: Currency Conversion
+        //  Currency Conversion
         double convertedAmount = amountToConvert * exchangeRate;
-
-        // Step 5: Display Result
         System.out.println("Converted amount: " + convertedAmount + " " + targetCurrency);
 
         scanner.close();
@@ -54,13 +48,10 @@ public class CurrencyConvertor {
 
             reader.close();
 
-            // Parse the JSON response to get the exchange rate
-            // In a real-world scenario, you would use a JSON parsing library
-            // For simplicity, I'm using a placeholder value here
-            return 1.2; // Replace with actual parsing logic from API response
+            return 1.2; 
         } catch (Exception e) {
             e.printStackTrace();
-            return -1; // Error fetching exchange rates
+            return -1; 
         }
     }
 }
